@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Recordstores</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Street</th>
+      <th>Code</th>
+      <th>City</th>
+      <th>Contact name</th>
+      <th>Contact number</th>
+      <th>Contact email</th>
+      <th>Contact fax</th>
+      <th>Seo title</th>
+      <th>Seo description</th>
+      <th>Logo url</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recordstores.each do |recordstore| %>
+      <tr>
+        <td><%= recordstore.name %></td>
+        <td><%= recordstore.street %></td>
+        <td><%= recordstore.code %></td>
+        <td><%= recordstore.city %></td>
+        <td><%= recordstore.contact_name %></td>
+        <td><%= recordstore.contact_number %></td>
+        <td><%= recordstore.contact_email %></td>
+        <td><%= recordstore.contact_fax %></td>
+        <td><%= recordstore.seo_title %></td>
+        <td><%= recordstore.seo_description %></td>
+        <td><%= recordstore.logo_url %></td>
+        <td><%= recordstore.content %></td>
+        <td><%= link_to 'Show', recordstore %></td>
+        <td><%= link_to 'Edit', edit_recordstore_path(recordstore) %></td>
+        <td><%= link_to 'Destroy', recordstore, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Recordstore', new_recordstore_path %>
