@@ -21,6 +21,10 @@ class RecordstoresController < ApplicationController
   def edit
   end
 
+  def get_recordstore_data 
+    html_doc =Nokogiri::HTML(open("http://www.plattenladenwoche.de/plattenlaeden/"))
+  end
+
   # POST /recordstores
   # POST /recordstores.json
   def create
